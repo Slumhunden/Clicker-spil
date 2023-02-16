@@ -1,4 +1,28 @@
 #screen {
-    width: 100%;
-    aspect-ratio: 16/9;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+#game {
+  /* grid-area: 1/1;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 10%/10%;
+  grid-template-rows: 100%; */
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+}
+body {
+  margin: 0;
+}
+#game_background {
+  grid-area: 1/1;
+  background-image: url(images/butik-baggrund.jpg);
+  background-size: contain;
+  background-color: red;
+  overflow: hidden;
+  /*  background-size: cover; */
 }
