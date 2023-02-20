@@ -75,3 +75,6 @@ body {
   background-repeat: no-repeat;
   /*  background-size: cover; */
 }
+.paused {
+  animation-play-state: paused;
+}
