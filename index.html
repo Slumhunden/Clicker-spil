@@ -13,19 +13,35 @@
         <div id="game_background"></div>
         <div id="game_elements">
           <div id="medarbejder-container">
-            <img src="images/medarbejder.png" alt="medarbejder">
+            <img
+              id="medarbejder_sprite"
+              src="images/medarbejder.png"
+              alt="medarbejder"
+            />
           </div>
           <div id="karen_container">
-            <img src="images/karen beskåret.png" class="karen" alt="karen">
+            <img id="karen_sprite" src="images/karen beskåret.png" />
+          </div>
+          <div id="karen_container1">
+            <img id="karen_sprite1" src="images/karen beskåret.png" />
           </div>
           <div id="kunde_container">
-            <img src="images/glad kunde beskåret.png" class="kunde" alt="kunde">
+            <img id="kunde_sprite" src="images/glad kunde beskåret.png" />
+          </div>
+          <div id="kunde_container1">
+            <img id="kunde_sprite1" src="images/glad kunde beskåret.png" />
           </div>
         </div>
         <div id="game_foreground"></div>
         <div id="game_ui">
-          <div id="score_board"></div>
-          <div id="life_board"></div>
+          <div id="score_board">
+            <span id="point_count">0</span>
+          </div>
+          <div id="life_board">
+            <img id="heart1" src="images/heart.svg" class="active_heart" />
+            <img id="heart2" src="images/heart.svg" class="active_heart" />
+            <img id="heart3" src="images/heart.svg" class="active_heart" />
+          </div>
           <div id="time_board"></div>
         </div>
       </div>
@@ -33,5 +49,6 @@
       <div id="game_over"></div>
       <div id="level_complete"></div>
     </div>
+    <script src="app.js"></script>
   </body>
 </html>

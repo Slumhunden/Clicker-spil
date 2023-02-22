@@ -1,6 +1,15 @@
 body {
   margin: 0;
 }
+@media screen and (max-width: 600px) {
+  #medarbejder-container img,
+  #karen_container img,
+  #kunde_container img,
+  #game_background img {
+    width: 50px;
+    height: 50px;
+  }
+}
 #screen {
   display: grid;
   grid-template-columns: 100%;
@@ -23,6 +32,47 @@ body {
   position: relative;
   overflow: hidden;
 }
+#game_ui {
+    position: absolute;
+    top: 9vw;
+    right: 5.5vw;
+    color: white;
+    
+    font-size: 2em;
+    font-family: sans-serif;
+    color: black;
+    pointer-events: none;
+}
+
+#score_board {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: .1em
+}
+
+#point_count {
+    white-space: nowrap;
+    text-align: right;
+}
+
+#life_board {
+    margin-block-start: .2em;
+    display: grid;
+    grid-template-columns: 1.2em 1.2em 1.2em;
+}
+
+#life_board img {
+    width: 100%;
+}
+
+.active_heart {
+   filter: drop-shadow(0 0 2px yellow);
+}
+
+.broken_heart {
+    filter: grayscale(75%) blur(.5px);
+}
+/*Animationer */
 #medarbejder-container {
   position: absolute;
   scale: 0.4;
@@ -31,12 +81,18 @@ body {
 #karen_container {
   position: absolute;
   scale: 0.4;
-  translate: -30% -8%;
+  translate: -100% -8%;
+}
+
+#karen_container1 {
+  position: absolute;
+  scale: 0.4;
+  translate: -100% -8%;
 }
 .karen {
   animation-name: karen;
-  animation-duration: 8s;
-  animation-direction: normal;
+  animation-duration: 9s;
+  animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
 @keyframes karen {
@@ -44,28 +100,83 @@ body {
     transform: translate(-30%, 8%);
   }
   100% {
-    transform: translate(450%, 8%);
+    transform: translate(550%, 8%);
+  }
+}
+.karen1 {
+  animation-name: karen1;
+  animation-duration: 9s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-delay: 4s;
+}
+@keyframes karen1 {
+  0% {
+    transform: translate(-30%, 8%);
+  }
+  100% {
+    transform: translate(550%, 8%);
   }
 }
 #kunde_container {
   position: absolute;
   scale: 0.35;
-  translate: -30% -8%;
+  translate: -100% -8%;
+}
+#kunde_container1 {
+  position: absolute;
+  scale: 0.35;
+  translate: -100% -8%;
 }
 .kunde {
   animation-name: kunde;
-  animation-duration: 8s;
-  animation-direction: normal;
+  animation-duration: 9s;
+animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
+  animation-delay: 2s;
 }
 @keyframes kunde {
   0% {
     transform: translate(-30%, 8%);
   }
   100% {
-    transform: translate(450%, 8%);
+    transform: translate(600%, 8%);
   }
 }
+.kunde1 {
+  animation-name: kunde1;
+  animation-duration: 9s;
+animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-delay: 6s;
+}
+@keyframes kunde1 {
+  0% {
+    transform: translate(-30%, 8%);
+  }
+  100% {
+    transform: translate(600%, 8%);
+  }
+}
+.paused {
+  animation-play-state: paused;
+}
+.zoom_out {
+    animation-name: zoom_out;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes zoom_out {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+/* Baggrund */
 #game_background {
   grid-area: 1/1;
   background-image: url(images/butik-baggrund.jpg);
@@ -75,6 +186,4 @@ body {
   background-repeat: no-repeat;
   /*  background-size: cover; */
 }
-.paused {
-  animation-play-state: paused;
-}
+
