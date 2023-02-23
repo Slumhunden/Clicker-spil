@@ -28,7 +28,7 @@ function start() {
     .querySelector("#kunde_container1")
     .addEventListener("click", clickKunde1);
 }
-
+//Funktionerne//
 function clickKaren() {
   console.log("du har klikket en karen");
   document
@@ -91,17 +91,36 @@ function clickKunde() {
     .querySelector("#kunde_container")
     .addEventListener("animationend", kundeRestart);
 }
+function clickKunde1() {
+  console.log("du har klikket en kunde");
+  document
+    .querySelector("#kunde_container1")
+    .removeEventListener("click", clickKunde1);
+  document.querySelector("#kunde_container1").classList.add("paused");
+  document.querySelector("#kunde_sprite1").classList.add("zoom_out");
+  document
+    .querySelector("#kunde_container1")
+    .addEventListener("animationend", kundeRestart);
+}
 function kundeRestart() {
   console.log("Kunde starter igen");
   document
     .querySelector("#kunde_container")
     .removeEventListener("animationend", kundeRestart);
   document.querySelector("#kunde_container").classList.remove("paused");
+  document.querySelector("#kunde_container1").classList.remove("paused");
   document.querySelector("#kunde_sprite").classList.remove("zoom_out");
+  document.querySelector("#kunde_sprite1").classList.remove("zoom_out");
   document.querySelector("#kunde_container").classList.remove("kunde");
+  document.querySelector("#kunde_container1").classList.remove("kunde");
   document.querySelector("#kunde_container").offsetWidth;
+    document.querySelector("#kunde_container1").offsetWidth;
   document.querySelector("#kunde_container").classList.add("kunde");
+  document.querySelector("#kunde_container1").classList.add("kunde");
   document
     .querySelector("#kunde_container")
     .addEventListener("click", clickKunde);
+    document
+      .querySelector("#kunde_container1")
+      .addEventListener("click", clickKunde1);
 }
