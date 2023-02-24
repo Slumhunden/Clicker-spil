@@ -145,7 +145,7 @@ function incrementPoints() {
   console.log("du har fået et point");
   points++;
   displayIncrementPoints();
-  if (points == 10) {
+  if (points >= 10) {
     gameWon();
   }
 }
@@ -173,7 +173,7 @@ function gameOver() {
   document.querySelector("#game_over").classList.remove("hidden");
 }
 // Level Complete //
-function gameWon(){
+function gameWon() {
   console.log("You defeated the Karens");
   document.querySelector("#level_complete").classList.remove("hidden");
 }
