@@ -30,6 +30,8 @@ function start() {
     .addEventListener("click", clickKunde1);
 }
 //Funktionerne//
+
+//Klik på Karen//
 function clickKaren() {
   console.log("du har klikket en karen");
   document
@@ -55,7 +57,7 @@ function clickKaren1() {
     .addEventListener("animationend", karenRestart1);
   incrementPoints();
 }
-
+// Genstart Animation Karen //
 function karenRestart() {
   console.log("Karen starter igen");
   document
@@ -84,7 +86,7 @@ function karenRestart1() {
     .querySelector("#karen_container1")
     .addEventListener("click", clickKaren1);
 }
-
+// Klik på Kunde //
 function clickKunde() {
   console.log("du har klikket en kunde");
   document
@@ -110,7 +112,7 @@ function clickKunde1() {
     .addEventListener("animationend", kundeRestart1);
   decrementLives();
 }
-
+// Genstart Animation Kunde //
 function kundeRestart() {
   console.log("Kunde starter igen");
   document
@@ -138,6 +140,7 @@ function kundeRestart1() {
     .querySelector("#kunde_container1")
     .addEventListener("click", clickKunde1);
 }
+// Scoreboard//
 function incrementPoints() {
   console.log("du har fået et point");
   points++;
@@ -164,7 +167,13 @@ function displayDecrementLives() {
   document.querySelector("#heart" + lives).classList.remove("active_heart");
   document.querySelector("#heart" + lives).classList.add("broken_heart");
 }
+// Game Over//
 function gameOver() {
   console.log("game over biatch");
   document.querySelector("#game_over").classList.remove("hidden");
+}
+// Level Complete //
+function gameWon(){
+  console.log("You defeated the Karens");
+  document.querySelector("#level_complete").classList.remove("hidden");
 }
