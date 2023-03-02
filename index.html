@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KAREN KILLER</title>
+    <title>Karéno Deleto</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -45,15 +45,23 @@
           <div id="time_board"></div>
         </div>
       </div>
-      <div id="start"></div>
+      <div id="start">
+        <h2>Karéno Deleto</h2>
+        <p>Red medarbejderens liv ved at klikke 10 "Karens" væk</p>
+        <button id="startknap" class="pulse">FIGHT</button>
+      </div>
       <div id="game_over" class="hidden">
         <img src="images/karen free.jpg" />
         <h2>The Karens have Won</h2>
+        <button id="genstart1" class="pulse">NEVER GIVE UP</button>
       </div>
       <div id="level_complete" class="hidden">
-        <img src="images/success.jpg"/>
+        <img src="images/success.jpg" />
+        <button id="genstart" class="pulse">Delete more Karens</button>
       </div>
     </div>
+    <audio id="game_start" src="audio/gamestart.mp3"></audio>
+    <audio id="godtklik" src="audio/grin.mp3"></audio>
     <script src="app.js"></script>
   </body>
 </html>

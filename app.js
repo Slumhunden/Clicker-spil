@@ -1,20 +1,77 @@
 "use strict";
-window.addEventListener("load", start);
+window.addEventListener("load", startScreen);
 
 let points = 0;
 let lives = 3;
 
+// Start Skærm//
+function startScreen() {
+  console.log("ready to rumble");
+  document.querySelector("#startknap").addEventListener("click", start);
+  document
+    .querySelector("#genstart")
+    .addEventListener("click", showStartScreen);
+  document
+    .querySelector("#genstart1")
+    .addEventListener("click", showStartScreen);
+}
+function showStartScreen() {
+  document.querySelector("#start").classList.remove("hidden");
+  document.querySelector("#game_over").classList.add("hidden");
+  document.querySelector("#level_complete").classList.add("hidden");
+}
 //Event listeners//
 function start() {
   console.log("Let the Games Begin!");
-  points = 0;
-  lives = 3;
+  resetLives();
+  resetPoints();
+  showGameScreen();
+  restartAnimations();
+  document.querySelector("#game_start").play();
+  document.querySelector("#start").classList.add("hidden");
   //Animationer start//
   document.querySelector("#karen_container").classList.add("karen");
   document.querySelector("#karen_container1").classList.add("karen1");
   document.querySelector("#kunde_container").classList.add("kunde");
   document.querySelector("#kunde_container1").classList.add("kunde1");
 
+  //Genstart funktioner//
+  function resetLives() {
+    lives = 3;
+    document.querySelector("#heart1").classList.remove("broken_heart");
+    document.querySelector("#heart2").classList.remove("broken_heart");
+    document.querySelector("#heart3").classList.remove("broken_heart");
+    document.querySelector("#heart1").classList.add("active_heart");
+    document.querySelector("#heart2").classList.add("active_heart");
+    document.querySelector("#heart3").classList.add("active_heart");
+  }
+  function resetPoints() {
+    points = 0;
+    displayIncrementPoints();
+  }
+  function showGameScreen() {
+    document.querySelector("#start").classList.add("hidden");
+    document.querySelector("#game_over").classList.add("hidden");
+    document.querySelector("#level_complete").classList.add("hidden");
+  }
+  function restartAnimations() {
+    document.querySelector("#karen_container").classList.remove("paused");
+    document.querySelector("#kunde_container").classList.remove("paused");
+    document.querySelector("#karen_container1").classList.remove("paused");
+    document.querySelector("#kunde_container1").classList.remove("paused");
+    document.querySelector("#karen_container1").classList.remove("zoom_out");
+    document.querySelector("#karen_container").classList.remove("zoom_out");
+    document.querySelector("#kunde_container1").classList.remove("zoom_out");
+    document.querySelector("#kunde_container").classList.remove("zoom_out");
+    document.querySelector("#karen_container").classList.remove("karen");
+    document.querySelector("#karen_container1").classList.remove("karen1");
+    document.querySelector("#kunde_container").classList.remove("kunde");
+    document.querySelector("#kunde_container1").classList.remove("kunde1");
+    document.querySelector("#kunde_container1").offsetWidth;
+    document.querySelector("#kunde_container").offsetWidth;
+    document.querySelector("#karen_container1").offsetWidth;
+    document.querySelector("#karen_container").offsetWidth;
+  }
   //Animationer klik //
   document
     .querySelector("#karen_container")
