@@ -27,7 +27,12 @@ function start() {
   resetPoints();
   showGameScreen();
   restartAnimations();
+  resetTimer();
+  startTimer();
   document.querySelector("#game_start").play();
+  setTimeout(function () {
+    document.querySelector("#baggrundsmusik").play();
+  }, 3000);
   document.querySelector("#start").classList.add("hidden");
   //Animationer start//
   document.querySelector("#karen_container").classList.add("karen");
@@ -202,9 +207,9 @@ function incrementPoints() {
   console.log("du har fået et point");
   points++;
   displayIncrementPoints();
-  if (points >= 10) {
+  /* if (points >= 10) {
     gameWon();
-  }
+  } */
 }
 function displayIncrementPoints() {
   document.querySelector("#point_count").textContent = points;
@@ -224,13 +229,37 @@ function displayDecrementLives() {
   document.querySelector("#heart" + lives).classList.remove("active_heart");
   document.querySelector("#heart" + lives).classList.add("broken_heart");
 }
+
+//Timer//
+function startTimer() {
+  document.querySelector("#time_sprite").classList.add("shrink");
+  document
+    .querySelector("#time_sprite")
+    .addEventListener("animationend", timeIsUp);
+}
+function timeIsUp() {
+  console.log("Time is up");
+  if (points >= 10) {
+    gameWon();
+  } else {
+    gameOver();
+  }
+}
+function resetTimer() {
+  document.querySelector("#time_sprite").classList.remove("shrink");
+  document.querySelector("#time_sprite").offsetWidth;
+}
 // Game Over//
 function gameOver() {
   console.log("game over biatch");
   document.querySelector("#game_over").classList.remove("hidden");
+  document.querySelector("#baggrundsmusik").pause();
+  document.querySelector("#gameover").play();
 }
 // Level Complete //
 function gameWon() {
   console.log("You defeated the Karens");
   document.querySelector("#level_complete").classList.remove("hidden");
+  document.querySelector("#baggrundsmusik").pause();
+  document.querySelector("#level_complete").play();
 }
