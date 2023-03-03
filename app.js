@@ -105,6 +105,8 @@ function clickKaren() {
     .querySelector("#karen_container")
     .addEventListener("animationend", karenRestart);
   incrementPoints();
+  document.querySelector("#karenklik").currentTime = 0;
+  document.querySelector("#karenklik").play();
 }
 
 function clickKaren1() {
@@ -118,6 +120,8 @@ function clickKaren1() {
     .querySelector("#karen_container1")
     .addEventListener("animationend", karenRestart1);
   incrementPoints();
+  document.querySelector("#karenklik").currentTime = 0;
+  document.querySelector("#karenklik").play();
 }
 // Genstart Animation Karen //
 function karenRestart() {
@@ -160,6 +164,8 @@ function clickKunde() {
     .querySelector("#kunde_container")
     .addEventListener("animationend", kundeRestart);
   decrementLives();
+  document.querySelector("#godtklik").currentTime = 0;
+  document.querySelector("#godtklik").play();
 }
 
 function clickKunde1() {
@@ -173,6 +179,8 @@ function clickKunde1() {
     .querySelector("#kunde_container1")
     .addEventListener("animationend", kundeRestart1);
   decrementLives();
+  document.querySelector("#godtklik").currentTime = 0;
+  document.querySelector("#godtklik").play();
 }
 // Genstart Animation Kunde //
 function kundeRestart() {
@@ -261,5 +269,5 @@ function gameWon() {
   console.log("You defeated the Karens");
   document.querySelector("#level_complete").classList.remove("hidden");
   document.querySelector("#baggrundsmusik").pause();
-  document.querySelector("#level_complete").play();
+  document.querySelector("#level_complete_sound").play();
 }

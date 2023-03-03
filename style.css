@@ -242,6 +242,9 @@ button {
 #start.hidden {
   display: none;
 }
+@keyframes hidden {
+  
+}
 /*Level Complete*/
 #level_complete {
   font-family: Arial, Helvetica, sans-serif;
