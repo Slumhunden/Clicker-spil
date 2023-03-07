@@ -29,6 +29,7 @@ function start() {
   restartAnimations();
   resetTimer();
   startTimer();
+  document.querySelector("#baggrundsmusik").currentTime = 0;
   document.querySelector("#game_start").currentTime = 0;
   document.querySelector("#game_start").play();
   setTimeout(function () {
